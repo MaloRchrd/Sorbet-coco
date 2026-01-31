@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Sorbet Coco Caribbean – Coconut Sorbet Experience</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Traditional Caribbean coconut sorbet service with hostess for events, weddings and private parties.">
 
   <style>
     body {
@@ -89,28 +90,6 @@
       text-align: center;
       padding: 80px 20px;
     }
-.whatsapp-float {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 60px;
-  height: 60px;
-  background-color: #25D366;
-  color: white;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 28px;
-  line-height: 60px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  z-index: 999;
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.08);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.35);
-}
 
     footer {
       background-color: #3a1f0e;
@@ -118,14 +97,33 @@
       text-align: center;
       padding: 20px;
     }
+
+    /* WhatsApp button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 28px;
+      line-height: 60px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      z-index: 999;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+    }
   </style>
 </head>
-<a href="https://wa.me/33600000000?text=Hello%20I%20would%20like%20a%20quote%20for%20a%20coconut%20sorbet%20service"
-   class="whatsapp-float"
-   target="_blank"
-   aria-label="Contact WhatsApp">
-  💬
-</a>
+
 <body>
 
 <header>
@@ -135,23 +133,19 @@
   </div>
 
   <h1 data-fr="Sorbet Coco Traditionnel Caribbean"
-      data-en="Traditional Caribbean Coconut Sorbet">
-  </h1>
+      data-en="Traditional Caribbean Coconut Sorbet"></h1>
 
   <p data-fr="Offrez à vos invités une expérience authentique des Antilles avec notre sorbetière artisanale et nos hostesses en tenue traditionnelle."
-     data-en="Treat your guests to an authentic Caribbean experience with our traditional coconut sorbet and professional hostesses in Creole attire.">
-  </p>
+     data-en="Treat your guests to an authentic Caribbean experience with our traditional coconut sorbet and professional hostesses in Creole attire."></p>
 
   <a href="#contact" class="btn"
      data-fr="Demander un devis"
-     data-en="Request a quote">
-  </a>
+     data-en="Request a quote"></a>
 </header>
 
 <section>
   <h2 data-fr="Une animation unique et gourmande"
-      data-en="A unique and delicious experience">
-  </h2>
+      data-en="A unique and delicious experience"></h2>
 
   <div class="features">
     <div class="card">
@@ -192,15 +186,30 @@
   © 2026 – Sorbet Coco Caribbean
 </footer>
 
+<a href="#" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  💬
+</a>
+
 <script>
+  const whatsappNumber = "33600000000";
+
+  function updateWhatsAppLink(lang) {
+    const messages = {
+      fr: "Bonjour, je souhaiterais un devis pour une prestation de sorbet coco.",
+      en: "Hello, I would like a quote for a coconut sorbet service."
+    };
+    document.querySelector('.whatsapp-float').href =
+      "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(messages[lang]);
+  }
+
   function setLang(lang) {
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-fr]').forEach(el => {
       el.textContent = el.getAttribute('data-' + lang);
     });
+    updateWhatsAppLink(lang);
   }
 
-  // Langue par défaut
   setLang('fr');
 </script>
 
