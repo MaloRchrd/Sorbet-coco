@@ -83,36 +83,38 @@
       text-align: center;
     }
 
-    /* ===== INSTAGRAM GRID ===== */
+    /* ===== INSTAGRAM GRID (3 COLS ALWAYS) ===== */
     .photo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
     }
 
     .photo-grid img {
       width: 100%;
-      height: 180px;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: transform 0.25s ease;
     }
 
     .photo-grid img:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
     }
 
     /* ===== MODAL ===== */
     .modal {
-      display: none;
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.85);
-      justify-content: center;
+      display: none;
       align-items: center;
+      justify-content: center;
       z-index: 2000;
     }
+
+    .modal.active { display: flex; }
 
     .modal img {
       max-width: 90%;
@@ -120,14 +122,10 @@
       border-radius: 15px;
     }
 
-    .modal.active {
-      display: flex;
-    }
-
     .modal-close {
       position: absolute;
-      top: 25px;
-      right: 30px;
+      top: 20px;
+      right: 25px;
       font-size: 32px;
       color: white;
       cursor: pointer;
@@ -147,6 +145,7 @@
       padding: 20px;
     }
 
+    /* ===== WHATSAPP ===== */
     .whatsapp-float {
       position: fixed;
       bottom: 25px;
@@ -194,13 +193,15 @@
       <h3>🥥 Sorbet coco artisanal</h3>
       <p>Préparé à l’ancienne avec de la noix de coco fraîche.</p>
     </div>
+
     <div class="card">
       <h3>👩🏽‍🍳 Hostess professionnelle</h3>
-      <p>Service élégant en tenue traditionnelle.</p>
+      <p>Service assuré en tenue traditionnelle.</p>
     </div>
+
     <div class="card">
       <h3>🎉 Tous vos événements</h3>
-      <p>Mariages, soirées privées, événements d’entreprise.</p>
+      <p>Mariages, anniversaires, soirées privées, événements d’entreprise.</p>
     </div>
   </div>
 </section>
@@ -222,7 +223,9 @@
 <section class="contact" id="contact">
   <h2 data-fr="Contact & Devis"
       data-en="Contact & Quotation"></h2>
+
   <p>Email : contact@sorbetcoco-caribbean.com</p>
+  <p>Phone : +33 6 72 03 62 00</p>
 </section>
 
 <footer>
