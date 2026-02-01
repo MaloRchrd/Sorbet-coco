@@ -28,6 +28,7 @@
       cursor: pointer;
       font-weight: bold;
       margin-left: 5px;
+      font-size: 18px;
     }
 
     header {
@@ -83,6 +84,10 @@
       text-align: center;
     }
 
+    .card h3 {
+      margin-bottom: 15px;
+    }
+
     /* ===== INSTAGRAM GRID (3 COLS ALWAYS) ===== */
     .photo-grid {
       display: grid;
@@ -92,7 +97,7 @@
 
     .photo-grid img {
       width: 100%;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 1/1;
       object-fit: cover;
       border-radius: 8px;
       cursor: pointer;
@@ -169,8 +174,8 @@
 
 <header>
   <div class="lang-switch">
-    <button onclick="setLang('fr')">FR</button>
-    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('fr')">🇫🇷</button>
+    <button onclick="setLang('en')">🇬🇧</button>
   </div>
 
   <h1 data-fr="Sorbet Coco Traditionnel Caribbean"
@@ -190,18 +195,24 @@
 
   <div class="features">
     <div class="card">
-      <h3>🥥 Sorbet coco artisanal</h3>
-      <p>Préparé à l’ancienne avec de la noix de coco fraîche.</p>
+      <h3 data-fr="🥥 Sorbet coco artisanal"
+          data-en="🥥 Handmade coconut sorbet"></h3>
+      <p data-fr="Préparé à l’ancienne avec de la noix de coco fraîche et des épices locales."
+         data-en="Made the traditional way with fresh coconut and Caribbean spices."></p>
     </div>
 
     <div class="card">
-      <h3>👩🏽‍🍳 Hostess professionnelle</h3>
-      <p>Service assuré en tenue traditionnelle.</p>
+      <h3 data-fr="👩🏽‍🍳 Hostess professionnelle"
+          data-en="👩🏽‍🍳 Professional hostess"></h3>
+      <p data-fr="Service assuré par une hostess souriante en tenue traditionnelle."
+         data-en="Service provided by a friendly hostess in traditional Caribbean outfit."></p>
     </div>
 
     <div class="card">
-      <h3>🎉 Tous vos événements</h3>
-      <p>Mariages, anniversaires, soirées privées, événements d’entreprise.</p>
+      <h3 data-fr="🎉 Tous vos événements"
+          data-en="🎉 All your events"></h3>
+      <p data-fr="Mariages, anniversaires, soirées privées, événements d’entreprise."
+         data-en="Weddings, birthdays, private parties, corporate events."></p>
     </div>
   </div>
 </section>
@@ -214,7 +225,7 @@
     <img src="https://pbs.twimg.com/media/Dq_lAxuX0AAL5nC.jpg" onclick="openModal(this.src)">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8xbZDwsUO2gMUxkosiuNLvdTgtjr2UzT1eWhpBQz2NA&s=10" onclick="openModal(this.src)">
     <img src="https://noscoeursvoyageurs.fr/wp-content/uploads/2018/11/sorbet-coco.jpg" onclick="openModal(this.src)">
-    <img src="https://images.unsplash.com/photo-1505253216365-41f6f00a8d91" onclick="openModal(this.src)">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZcm0q_grpg7v0qGyj6Uba-Xv1AFlnt6eGC98OJmpj8sIMkPK1Mzvg0wt1&s=10" onclick="openModal(this.src)">
     <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9" onclick="openModal(this.src)">
     <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" onclick="openModal(this.src)">
   </div>
