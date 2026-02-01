@@ -32,16 +32,14 @@
 
     header {
       background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-      url('https://images.unsplash.com/photo-1715941873444-e8ec67753c98?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+      url('https://images.unsplash.com/photo-1715941873444-e8ec67753c98?q=80&w=1170&auto=format&fit=crop') center/cover no-repeat;
       color: white;
       text-align: center;
       padding: 120px 20px;
       position: relative;
     }
 
-    header h1 {
-      font-size: 3rem;
-    }
+    header h1 { font-size: 3rem; }
 
     header p {
       font-size: 1.3rem;
@@ -85,6 +83,57 @@
       text-align: center;
     }
 
+    /* ===== INSTAGRAM GRID ===== */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .photo-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    /* ===== MODAL ===== */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 15px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      font-size: 32px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
     .contact {
       background-color: #fbe8d3;
       text-align: center;
@@ -98,7 +147,6 @@
       padding: 20px;
     }
 
-    /* WhatsApp button */
     .whatsapp-float {
       position: fixed;
       bottom: 25px;
@@ -114,12 +162,6 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.25);
       z-index: 999;
       text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.08);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.35);
     }
   </style>
 </head>
@@ -149,46 +191,50 @@
 
   <div class="features">
     <div class="card">
-      <h3 data-fr="🥥 Sorbet coco artisanal"
-          data-en="🥥 Handmade coconut sorbet"></h3>
-      <p data-fr="Préparé à l’ancienne avec de la noix de coco fraîche et des épices locales."
-         data-en="Made the traditional way with fresh coconut and Caribbean spices."></p>
+      <h3>🥥 Sorbet coco artisanal</h3>
+      <p>Préparé à l’ancienne avec de la noix de coco fraîche.</p>
     </div>
-
     <div class="card">
-      <h3 data-fr="👩🏽‍🍳 Hostess professionnelle"
-          data-en="👩🏽‍🍳 Professional hostess"></h3>
-      <p data-fr="Service assuré par une hostess souriante en tenue traditionnelle."
-         data-en="Service provided by a friendly hostess in traditional Caribbean outfit."></p>
+      <h3>👩🏽‍🍳 Hostess professionnelle</h3>
+      <p>Service élégant en tenue traditionnelle.</p>
     </div>
-
     <div class="card">
-      <h3 data-fr="🎉 Tous vos événements"
-          data-en="🎉 All your events"></h3>
-      <p data-fr="Mariages, anniversaires, soirées privées, événements d’entreprise."
-         data-en="Weddings, birthdays, private parties, corporate events."></p>
+      <h3>🎉 Tous vos événements</h3>
+      <p>Mariages, soirées privées, événements d’entreprise.</p>
     </div>
+  </div>
+</section>
+
+<section>
+  <h2 data-fr="En images"
+      data-en="Gallery"></h2>
+
+  <div class="photo-grid">
+    <img src="https://images.unsplash.com/photo-1604908177522-b0ef8a7b0c6c" onclick="openModal(this.src)">
+    <img src="https://images.unsplash.com/photo-1544126592-807ade215a0b" onclick="openModal(this.src)">
+    <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7" onclick="openModal(this.src)">
+    <img src="https://images.unsplash.com/photo-1505253216365-41f6f00a8d91" onclick="openModal(this.src)">
+    <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9" onclick="openModal(this.src)">
+    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" onclick="openModal(this.src)">
   </div>
 </section>
 
 <section class="contact" id="contact">
   <h2 data-fr="Contact & Devis"
       data-en="Contact & Quotation"></h2>
-
-  <p data-fr="Indiquez-nous la date, le lieu et le nombre d’invités."
-     data-en="Tell us the date, location and number of guests."></p>
-
   <p>Email : contact@sorbetcoco-caribbean.com</p>
-  <p>Phone : +33 6 00 00 00 00</p>
 </section>
 
 <footer>
   © 2026 – Sorbet Coco Caribbean
 </footer>
 
-<a href="#" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-  💬
-</a>
+<a href="#" class="whatsapp-float" target="_blank">💬</a>
+
+<div class="modal" id="modal" onclick="closeModal(event)">
+  <span class="modal-close" onclick="closeModal(event)">×</span>
+  <img id="modal-img">
+</div>
 
 <script>
   const whatsappNumber = "33672036200";
@@ -211,6 +257,17 @@
   }
 
   setLang('fr');
+
+  function openModal(src) {
+    document.getElementById('modal-img').src = src;
+    document.getElementById('modal').classList.add('active');
+  }
+
+  function closeModal(e) {
+    if (e.target.id === 'modal' || e.target.classList.contains('modal-close')) {
+      document.getElementById('modal').classList.remove('active');
+    }
+  }
 </script>
 
 </body>
