@@ -97,6 +97,66 @@
       margin-bottom: 15px;
     }
 
+/* — SECTION MENU — */
+.menu-section {
+  max-width: 960px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.menu-section .title {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  color: #222;
+}
+
+/* — GRILLE DES PLATS — */
+.menu-grid {
+  display: grid;
+  gap: 1.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  padding: 1rem 0;
+}
+
+/* — CARD DU PLAT — */
+.menu-item {
+  background: #fff;
+  padding: 1.6rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* — CONTENU DU PLAT — */
+.item-name {
+  font-size: 1.4rem;
+  margin: 0.4rem 0;
+  color: #111;
+}
+
+.item-desc {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.item-price {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #222;
+  background: #f3f3f3;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+}
+
     /* ===== INSTAGRAM GRID (3 COLS ALWAYS) ===== */
     .photo-grid {
       display: grid;
@@ -240,6 +300,41 @@
 <p data-fr="Aux Caraïbes, le sorbet coco est bien plus qu’un simple dessert : c’est un rituel de fraîcheur et de partage. Préparé à partir de lait de coco frais, parfumé à la cannelle, à la muscade et parfois à la vanille ou au citron vert, il est traditionnellement turbiné à la main dans une sorbetière en bois. On le déguste glacé, souvent dans les rues ou sur les plages, pour se rafraîchir sous le soleil tropical, avec ce goût crémeux et épicé qui évoque instantanément les îles."
    data-en="In the Caribbean, coconut sorbet is more than just a dessert — it’s a moment of freshness and sharing. Made from fresh coconut milk and delicately spiced with cinnamon, nutmeg, and sometimes vanilla or lime zest, it is traditionally churned by hand in a wooden sorbet maker. Enjoyed ice-cold, often on the streets or by the beach, it’s the perfect way to cool down, with a creamy, fragrant taste that instantly brings the islands to mind."></p>
      </div>
+</section>
+
+ <section class="menu-section">
+  <h2 class="title">Fabrication de boissons healthy</h2>
+
+  <div class="menu-grid">
+
+    <div class="menu-item">
+      <h3 class="item-name">Bissap Bio & Menthe Fraîche</h3>
+      <p class="item-desc">
+        Infusion naturelle de fleurs d’hibiscus bio, rafraîchie avec de la menthe fraîche.
+        Riche en antioxydants et naturellement désaltérante.
+      </p>
+      <span class="item-price">—</span>
+    </div>
+
+    <div class="menu-item">
+      <h3 class="item-name">Citron Gingembre</h3>
+      <p class="item-desc">
+        Mélange tonique de citron pressé et de gingembre frais.
+        Idéal pour stimuler l’énergie et la digestion.
+      </p>
+      <span class="item-price">—</span>
+    </div>
+
+    <div class="menu-item">
+      <h3 class="item-name">Spirtonic</h3>
+      <p class="item-desc">
+        Boisson revitalisante à base de spiruline, guarana, acérola et jus de pommes.
+        Un concentré naturel de vitalité.
+      </p>
+      <span class="item-price">—</span>
+    </div>
+
+  </div>
 </section>
 
 <section>
